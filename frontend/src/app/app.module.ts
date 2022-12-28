@@ -3,16 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { LandingPageComponent } from './landing-page/landing-page.component';
+import { QuizPageComponent } from './quiz-page/quiz-page.component';
+import { ResultPageComponent } from './result-page/result-page.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, NgForm } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LandingPageComponent,
+    QuizPageComponent,
+    ResultPageComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [HttpClientModule, NgForm],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
