@@ -1,0 +1,38 @@
+<div class=" bg-2 p-4">
+    <div class="text-center mb-3">
+        <h2 class="align-self-center">Please answer the following questions</h2>
+
+    </div>
+  <form #quizForm="ngForm">
+    <div *ngFor="let question of result; let Qi = index">
+      <div class="row m-4">
+        <div class="col">
+          <h5>{{Qi + 1}}) {{ question.text }}</h5>
+          <div class="form-check " *ngFor="let choice of question.choices; let Ci = index">
+            <input
+            class="form-check-input "
+              required
+              type="radio"
+              [id]="[Qi, Ci]"
+              [name]="Qi.toString()"
+              [value]="choice.value"
+              ngModel
+            />
+            <label class="form-check-label " [for]="[Qi, Ci]"> {{ choice.text }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+
+        <button
+          [disabled]="quizForm.invalid"
+          routerLinkActive="router-link-active"
+          (click)="onSubmit(quizForm)"
+          class="m-4 btn btn-primary"
+        >
+          Submit
+        </button>
+    </div>
+  </form>
+</div>
