@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+.main-wrapper {
+    height: 100vh;  
+  }
+
+.bg-color{
+    background-color: aqua;
+}
+
+.bg-1{
+    background-image: url(./assets/bg.jpg);
+    background-size: cover;
+  }
+
+.bg-2{
+    background-image: url(./assets/bg-4.webp);
+    background-size: cover;
+  }
+
+.bg-3{
+    background-image: url(./assets/bg-3.jpg);
+    background-size: cover;
+  }
